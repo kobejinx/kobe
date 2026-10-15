@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="一个简洁、有活力的 NBA 主题网页示例。"
+    />
+    <title>NBA · 篮球时刻</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="NBA 篮球时刻首页">
+        <span class="brand-mark">NBA</span>
+        <span>篮球时刻</span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#games">焦点赛事</a>
+        <a href="#stars">球星看台</a>
+        <a href="#fan-zone">球迷专区</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">THE GAME NEVER STOPS</p>
+          <h1 id="hero-title">每一回合，<br /><em>都是传奇。</em></h1>
+          <p class="hero-text">
+            从终场绝杀到空中接力，感受篮球最纯粹的速度、力量与热爱。
+          </p>
+          <a class="button" href="#games">查看焦点赛事 <span>→</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="arc arc-one"></div>
+          <div class="arc arc-two"></div>
+          <div class="ball"><i></i><b></b><strong></strong></div>
+          <p>24</p>
+        </div>
+      </section>
+
+      <section class="section games" id="games" aria-labelledby="games-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">GAME NIGHT</p>
+            <h2 id="games-title">焦点赛事</h2>
+          </div>
+          <button class="text-button" id="toggleScores" type="button">展开比分</button>
+        </div>
+
+        <div class="matchup" id="matchup">
+          <div class="team">
+            <span class="team-logo lakers">LA</span>
+            <h3>湖人</h3>
+            <span class="record">西部 · 12 - 8</span>
+          </div>
+          <div class="versus">
+            <span class="game-status">TODAY · 10:30</span>
+            <strong>VS</strong>
+            <span class="venue">Crypto.com Arena</span>
+          </div>
+          <div class="team">
+            <span class="team-logo warriors">GS</span>
+            <h3>勇士</h3>
+            <span class="record">西部 · 13 - 7</span>
+          </div>
+          <div class="score-panel" aria-live="polite">
+            <span>模拟实时比分</span>
+            <strong>102 <i>:</i> 98</strong>
+            <small>第四节 · 02:14</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section stars" id="stars" aria-labelledby="stars-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">AROUND THE LEAGUE</p>
+            <h2 id="stars-title">球星看台</h2>
+          </div>
+          <p class="section-note">数据仅作页面演示</p>
+        </div>
+        <div class="player-grid">
+          <article class="player-card purple-card">
+            <span class="player-number">23</span>
+            <div>
+              <p>LEBRON JAMES</p>
+              <h3>统治力，从不设限</h3>
+              <span>锋线 · 洛杉矶</span>
+            </div>
+          </article>
+          <article class="player-card blue-card">
+            <span class="player-number">30</span>
+            <div>
+              <p>STEPHEN CURRY</p>
+              <h3>三分线外，改变比赛</h3>
+              <span>后卫 · 金州</span>
+            </div>
+          </article>
+          <article class="player-card orange-card">
+            <span class="player-number">77</span>
+            <div>
+              <p>LUKA DONČIĆ</p>
+              <h3>节奏，由我掌控</h3>
+              <span>后卫 · 达拉斯</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="fan-zone" id="fan-zone" aria-labelledby="fan-title">
+        <div>
+          <p class="eyebrow">YOUR COURT</p>
+          <h2 id="fan-title">为你支持的球队呐喊。</h2>
+        </div>
+        <div class="fan-action">
+          <p id="cheerMessage">今晚的比赛，准备好了吗？</p>
+          <button class="button light-button" id="cheerButton" type="button">
+            为主队加油 <span>✦</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>NBA 篮球时刻</span>
+      <span>为网页设计练习制作 · 非 NBA 官方网站</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
