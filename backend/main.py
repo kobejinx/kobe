@@ -1,16 +1,14 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+from config import settings
 
 
 app = FastAPI(title="Kobe API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ],
+    allow_origins=list(settings.frontend_origins),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -29,5 +27,13 @@ def get_profile():
 
 
 if __name__ == "__main__":
-    print("后端已启动：http://localhost:8000/api/profile")
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    if settings.public_url:
+        print(f"后端已启动：{settings.public_url}/api/profile")
+    else:
+        print(f"后端已启动，监听端口：{settings.port}")
+    uvicorn.run(
+        "main:app",
+        host=settings.host,
+        port=settings.port,
+        reload=settings.reload,
+    )
