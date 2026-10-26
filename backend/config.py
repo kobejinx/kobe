@@ -3,7 +3,6 @@
 import os
 from dataclasses import dataclass
 from pathlib import Path
-
 from dotenv import load_dotenv
 
 
@@ -22,7 +21,6 @@ class Settings:
     port: int = int(os.getenv("API_PORT", "8000"))
     reload: bool = os.getenv("API_RELOAD", "false").lower() == "true"
     frontend_origins: tuple[str, ...] = _read_origins()
-    public_url: str = os.getenv("API_PUBLIC_URL", "")
 
 
 settings = Settings()
