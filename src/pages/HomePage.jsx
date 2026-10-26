@@ -3,8 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Card from "../Card";
 import { concepts, siteContent } from "../data/content";
 
-const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "/api";
-
 export default function HomePage() {
   const navigate = useNavigate();
   const { home } = siteContent;
@@ -14,7 +12,7 @@ export default function HomePage() {
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch(`${apiBaseUrl}/profile`, {
+    fetch("/api/profile", {
       signal: controller.signal,
     })
       .then((response) => {
