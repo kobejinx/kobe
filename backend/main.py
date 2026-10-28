@@ -94,10 +94,7 @@ def analyze_sentiment(request: SentimentRequest):
 
 
 if __name__ == "__main__":
-    if settings.public_url:
-        print(f"后端已启动：{settings.public_url}/api/profile")
-    else:
-        print(f"后端已启动，监听端口：{settings.port}")
+    print(f"后端已启动，监听端口：{settings.port}")
     uvicorn.run(
         "main:app",
         host=settings.host,
