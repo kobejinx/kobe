@@ -5,19 +5,19 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   const apiProxyTarget = env.VITE_API_PROXY_TARGET;
 
-  if (!apiProxyTarget) {
-    throw new Error("Missing VITE_API_PROXY_TARGET in .env.local");
-  }
-
   return {
     plugins: [react()],
-    server: {
-      proxy: {
-        "/api": {
-          target: apiProxyTarget,
-          changeOrigin: true,
-        },
-      },
-    },
+
+    // 只有本地配置了后端地址，才启用 Vite 开发代理
+    server: apiProxyTarget
+      ? {
+          proxy: {
+            "/api": {
+              target: apiProxyTarget,
+              changeOrigin: true,
+            },
+          },
+        }
+      : undefined,
   };
 });
